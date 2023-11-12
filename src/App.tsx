@@ -1,6 +1,14 @@
 import React from 'react'
 import './App.css'
 
+interface AudioClip {
+  keyCode: number;
+  keyTrigger: string;
+  id: string;
+  url: string;
+}
+
+
 // Define an array of audio clips with properties for each clip
 const audioClips = [
   {
@@ -138,7 +146,7 @@ function App() {
   );
 }
 
-function Pad({ clip, volume, setRecording }) {
+function Pad({ clip, volume, setRecording }: { clip: AudioClip, volume: number, setRecording: React.Dispatch<React.SetStateAction<string>> }) {
   const [active, setActive] = React.useState(false);
 
   // Add an event listener for key presses to trigger the playSound function
@@ -150,7 +158,7 @@ function Pad({ clip, volume, setRecording }) {
   });
 
   // Function to handle key presses and play the corresponding audio
-  const handleKeyPress = (e) => {
+  const handleKeyPress = (e: { keyCode: number; }) => {
     if (e.keyCode === clip.keyCode) {
       playSound();
     }
@@ -164,7 +172,7 @@ function Pad({ clip, volume, setRecording }) {
     audioTag.volume = volume;
     audioTag.currentTime = 0;
     audioTag.play();
-    setRecording((prev) => prev + String(clip.keyTrigger));
+    setRecording((prev: string) => prev + String(clip.keyTrigger));
   };
 
   return (
@@ -174,7 +182,7 @@ function Pad({ clip, volume, setRecording }) {
     >
       <audio className="clip" id={clip.keyTrigger} src={clip.url} />
       {clip.keyTrigger}
-      
+
     </div>
   );
 }
