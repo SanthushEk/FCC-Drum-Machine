@@ -1,0 +1,126 @@
+.container{
+  text-align: center;
+  margin: 50px;
+}
+/*Drum Pad Styles*/
+.drum-pad{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  gap: 50px;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin: 50px auto;
+  width: min-content;
+}
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #0F084B;
+  background-color: #26408B;
+  color: white;
+  font-size: 20px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.264);
+  transition: all 0.2s ease-in-out;
+
+}
+
+.btn:active{
+  transform: translate(4px,4px);
+  background-color:#A6CFD5;
+  color: #2f2f2f;
+}
+
+.btn:hover{
+  background-color: #A6CFD5;
+  color:#26408B;
+}
+
+/* Style the Volume and Speed labels */
+h4 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* Style the range inputs */
+input.range {
+  width: 50%;
+  height: 10px; 
+  background: white; 
+  border: 2px solid #0F084B; 
+  border-radius: 2px; 
+}
+
+/* Style the thumb of the range inputs */
+input.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; 
+  height: 20px; 
+  background: #3f3f3f; 
+  border: 2px solid #0F084B; 
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Style the recording text */
+h3 {
+  font-size: 20px;
+  margin: 10px;
+}
+
+/*  Clear buttons */
+button.btn-close {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 20px; 
+  background-color: #3f3f3f; 
+  color: #A6CFD5;
+  font-size: 1rem;
+  border: 2px solid #0D0221;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/*  Play buttons */
+button.btn-play {
+  display: inline-block;
+  margin-right: 10px; 
+  padding: 10px 20px; 
+  background-color: #3f3f3f; 
+  color: #A6CFD5;
+  font-size: 1rem;
+  border: 2px solid #0D0221;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button.btn-close:hover {
+  background-color: #990F02;
+}
+button.btn-play:hover {
+  background-color: #3CB043; 
+}
+
+/* Additional style for the line break between buttons */
+br {
+  margin: 10px 0;
+}
+
+.display{
+  font-size: 12px;
+  display:block;
+}
+
+
+.signature {
+  text-align: center;  
+  margin-top: 20px;
+  font-size: 14px; 
+  color: #777;
+}
